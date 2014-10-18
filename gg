@@ -8,6 +8,7 @@ transliterate-rx() {
 		chr=${rx:0:1}
 		rx=${rx:1}
 		case "$chr" in
+			'/') printf '\\%c' "$chr" ;; # because / is the pattern delimiter in Vim
 			'?'|'+'|'{'|'|'|'('|')') printf '\\%c' "$chr" ;;
 			\\)
 				chr=${rx:0:1}
