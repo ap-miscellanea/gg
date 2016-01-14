@@ -39,7 +39,7 @@ ggv() {
 
 vi() {
 	local vim=$GIT_GREP_EDITOR
-	export -n GIT GIT_DIR GIT_PREFIX GIT_GREP_OLDPATH # HACK (except OLDPATH)
+	export -n GIT GIT_DIR GIT_PREFIX GIT_WORK_TREE GIT_GREP_OLDPATH # HACK (except OLDPATH)
 	rm "$0" || die "couldn't delete temporary symlink"
 	rmdir "${0%/*}" || die "couldn't delete temporary bin directory"
 	PATH=$GIT_GREP_OLDPATH
