@@ -34,7 +34,7 @@ ggv() {
 	ln -s "$0" "$bindir/vi" || die "couldn't create temporary vi symlink"
 	export GIT_GREP_OLDPATH=$PATH
 	PATH=$bindir:$PATH
-	gg -Ovi "$@"
+	gg -IOvi "$@"
 }
 
 vi() {
